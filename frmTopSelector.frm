@@ -111,6 +111,7 @@ End Sub
 
 Private Sub cmdNoTopmost_Click()
     SetWindowPos rHwnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOACTIVATE Or SWP_SHOWWINDOW Or SWP_NOMOVE Or SWP_NOSIZE
+    writeLog "撤销置顶，被操作窗口：" & rTitle
 End Sub
 
 Private Sub cmdTopmost_Click()
@@ -120,7 +121,6 @@ End Sub
 
 Private Sub Form_Activate()
     SetWindowPos Me.hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOACTIVATE Or SWP_SHOWWINDOW Or SWP_NOMOVE Or SWP_NOSIZE
-    writeLog "撤销置顶，被操作窗口：" & rTitle
 End Sub
 
 Private Sub cmdGetHwnd_Click()
